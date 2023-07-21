@@ -4,7 +4,7 @@
     <div class="relative bg-white overflow-hidden">
       <div class="max-w-7xl mx-auto">
         <div
-          class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full"
+          class="relative pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full"
         >
           <svg
             class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
