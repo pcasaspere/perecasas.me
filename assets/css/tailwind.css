@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .blog-content {
+    @apply text-justify space-y-3;
+    a {
+      @apply underline text-primary font-bold;
+    }
+    img {
+      @apply max-w-lg rounded-lg shadow-lg mx-auto py-3;
+    }
+  }
+}
