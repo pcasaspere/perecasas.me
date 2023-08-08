@@ -5,11 +5,20 @@
 @layer base {
   .blog-content {
     @apply text-justify space-y-3;
+    h2 {
+      @apply text-lg lg:text-2xl font-bold text-gray-900 dark:text-white;
+    }
     a {
       @apply underline text-primary font-bold;
     }
     img {
       @apply max-w-lg rounded-lg shadow-lg mx-auto py-3;
+    }
+    ul {
+      @apply space-y-2 list-disc list-inside;
+    }
+    code {
+      @apply text-primary px-1 rounded;
     }
   }
 }

@@ -1,13 +1,19 @@
-<script setup></script>
+<script setup>
+const title = "Sobre mí";
+
+useSeoMeta({
+  title,
+});
+</script>
 <template>
   <div class="mb-24">
-    <div class="relative bg-white overflow-hidden">
+    <div class="relative overflow-hidden">
       <div class="max-w-7xl mx-auto">
         <div
-          class="relative pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full"
+          class="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full dark:bg-gray-900"
         >
           <svg
-            class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+            class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white dark:text-gray-900 transform translate-x-1/2"
             fill="currentColor"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
@@ -23,9 +29,9 @@
           >
             <div class="sm:text-center lg:text-left space-y-3">
               <h2
-                class="my-6 text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl"
+                class="my-6 text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl dark:text-white"
               >
-                Sobre mí
+                {{ title }}
               </h2>
 
               <p>

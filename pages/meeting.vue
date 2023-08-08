@@ -1,4 +1,5 @@
 <script setup>
+const title = "Agendar una reunión";
 const tidycalEmbed = ref();
 const isShow = ref();
 onMounted(() => {
@@ -6,9 +7,13 @@ onMounted(() => {
   TidyCal.init(tidycalEmbed.value);
 });
 onUnmounted(() => document.querySelector(".tidycal-embed")?.remove());
+
+useSeoMeta({
+  title, 
+});
 </script>
 <template>
-  <TitlePage>Agendar una reunión</TitlePage>
+  <TitlePage>{{ title }}</TitlePage>
   <div
     v-show="isShow"
     ref="tidycalEmbed"

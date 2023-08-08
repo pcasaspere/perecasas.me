@@ -31,7 +31,7 @@ const tags = computed(() => props.document.tags || []);
     </header>
     <div class="pb-8 dark:divide-gray-700">
       <div class="space-y-4 dark:prose-dark">
-        <div v-if="document.image" class="w-full mx-auto">
+        <div v-if="document.image" class="w-full flex justify-center">
           <NuxtImg
             class="object-cover rounded-xl shadow-2xl w-full max-w-2xl"
             :src="document.image"

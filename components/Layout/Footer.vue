@@ -13,8 +13,8 @@
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/pcasaspere"
-          ><span class="sr-only">github</span
-          ><IconsGithub class="h-6 w-6"/></NuxtLink>
+          ><span class="sr-only">github</span><IconsGithub class="h-6 w-6"
+        /></NuxtLink>
 
         <NuxtLink
           class="text-sm text-gray-500 transition hover:text-gray-600"
@@ -28,8 +28,20 @@
           target="_blank"
           rel="noopener noreferrer"
           href="https://twitter.com/CasasPerep"
-          ><span class="sr-only">twitter</span
-          ><IconsTwitter class="w-6 h-6" /></NuxtLink>
+          ><span class="sr-only">twitter</span><IconsTwitter class="w-6 h-6"
+        /></NuxtLink>
+      </div>
+
+      <div class="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
+        <NuxtLink :to="{ name: 'legal-aviso-legal' }">Aviso legal</NuxtLink>
+        <span>|</span>
+        <NuxtLink :to="{ name: 'legal-politica-privacidad' }"
+          >Política de privacidad</NuxtLink
+        >
+        <span>|</span>
+        <NuxtLink :to="{ name: 'legal-politica-cookies' }">
+          Política de cookies
+        </NuxtLink>
       </div>
       <div class="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
         <div>Pere Casas</div>

@@ -1,9 +1,0 @@
-<template>
-  <div class="mockup-code">
-    <pre data-prefix="$">
-        <code>
-            <slot />
-        </code>
-    </pre>
-  </div>
-</template>

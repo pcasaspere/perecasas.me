@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
@@ -7,6 +6,11 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-simple-sitemap",
   ],
+  runtimeConfig: {
+    public: {
+      isProduction: process.env.NODE_ENV === "production",
+    },
+  },
   app: {
     head: {
       script: [

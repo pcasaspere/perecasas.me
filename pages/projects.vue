@@ -1,4 +1,5 @@
 <script setup>
+const title = "Proyectos Personales";
 const utm_url =
   "?utm_source=website&utm_medium=web&utm_campaign=w_perecasasme&utm_id=w_perecasasme";
 const projects = computed(() => [
@@ -27,35 +28,40 @@ const projects = computed(() => [
     year: "2016 - actualidad",
   },
 ]);
+useSeoMeta({
+  title,
+});
 </script>
 <template>
-  <TitlePage>Proyectos Personales</TitlePage>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-2 justify-center">
-    <Card v-for="project in projects">
-      {{ project.desc }}
-      <template #title>
-        {{ project.name }} <span class="text-xs">{{ project.year }}</span>
-      </template>
-      <template #actions>
-        <div class="flex gap-2">
-          <NuxtLink
-            v-if="project.github"
-            :to="project.github"
-            class="btn btn-ghost"
-            target="_blank"
-          >
-            <IconsGithub class="w-6 h-6" />
-          </NuxtLink>
-          <NuxtLink
-            v-if="project.url"
-            :to="project.url"
-            class="btn btn-ghost"
-            target="_blank"
-          >
-            <IconsLlink class="w-6 h-6" />
-          </NuxtLink>
-        </div>
-      </template>
-    </Card>
+  <div class="space-y-10">
+    <TitlePage>{{ title }}</TitlePage>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 justify-center">
+      <Card v-for="project in projects">
+        {{ project.desc }}
+        <template #title>
+          {{ project.name }} <span class="text-xs">{{ project.year }}</span>
+        </template>
+        <template #actions>
+          <div class="flex gap-2">
+            <NuxtLink
+              v-if="project.github"
+              :to="project.github"
+              class="btn btn-ghost"
+              target="_blank"
+            >
+              <IconsGithub class="w-6 h-6" />
+            </NuxtLink>
+            <NuxtLink
+              v-if="project.url"
+              :to="project.url"
+              class="btn btn-ghost"
+              target="_blank"
+            >
+              <IconsLlink class="w-6 h-6" />
+            </NuxtLink>
+          </div>
+        </template>
+      </Card>
+    </div>
   </div>
 </template>
