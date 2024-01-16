@@ -17,6 +17,6 @@ useSeoMeta({
   <div
     v-show="isShow"
     ref="tidycalEmbed"
-    data-path="agencia-lafita/reunio-online-15-minuts"
+    data-path="atendata/reunio-online"
   />
 </template>

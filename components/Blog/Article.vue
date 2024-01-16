@@ -1,10 +1,17 @@
 <script setup>
-import dayjs from "dayjs";
+
 const props = defineProps(["document"]);
 
 const publishDate = computed(() =>
   props.document.date ? useDateToLocalString(props.document.date) : null
 );
+
+const sections = computed(() => props.document?.body?.children
+  .filter(children => children.tag == 'h2')
+  .map(children => ({
+    id: children?.props?.id,
+    text: children?.children[0]?.value
+  })));
 
 const tags = computed(() => props.document.tags || []);
 </script>
@@ -15,9 +22,7 @@ const tags = computed(() => props.document.tags || []);
         <dl class="space-y-10">
           <div>
             <dt class="sr-only">Publicado el</dt>
-            <dd
-              class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400"
-            >
+            <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
               <time v-show="document.date" :datetime="document.date">{{
                 publishDate
               }}</time>
@@ -32,29 +37,29 @@ const tags = computed(() => props.document.tags || []);
     <div class="pb-8 dark:divide-gray-700">
       <div class="space-y-4 dark:prose-dark">
         <div v-if="document.image" class="w-full flex justify-center">
-          <NuxtImg
-            class="object-cover rounded-xl shadow-2xl w-full max-w-2xl"
-            :src="document.image"
-          />
+          <NuxtImg class="object-cover rounded-xl shadow-2xl w-full max-w-2xl" :src="document.image" />
         </div>
-        <ContentRenderer class="blog-content" :value="document" />
+
+        <h2 class="my-3 hidden">Contenidos</h2>
+        <div class="flex flex-col gap-1 hidden">
+          <div v-for="section in sections">
+            <a :href="`#${section.id}`">
+              {{ section.text }}
+            </a>
+          </div>
+        </div>
+
+        <ContentRenderer :value="document" class="mt-10 blog-content" />
       </div>
       <footer>
-        <div
-          v-if="tags.length > 0"
-          class="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y"
-        >
+        <div v-if="tags.length > 0"
+          class="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
           <div class="py-4 xl:py-8">
-            <span
-              class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400"
-            >
+            <span class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
               Tags
             </span>
             <div class="flex flex-wrap space-x-4">
-              <TagButton
-                v-for="tag in tags"
-                :to="{ name: 'blog-tags-slug', params: { slug: tag } }"
-              >
+              <TagButton v-for="tag in tags" :to="{ name: 'blog-tags-slug', params: { slug: tag } }">
                 {{ tag }}
               </TagButton>
             </div>

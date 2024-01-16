@@ -3,8 +3,8 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
-    "deploy": "npx nuxi generate && firebase deploy --only hosting",
+    "dev": "nuxt dev --port=3000",
+    "deploy": "npx nuxi generate && firebase deploy --only hosting --project perecasas-me",
     "generate": "npx nuxi generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
