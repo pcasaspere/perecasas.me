@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "dayjs": "^1.11.9",
-    "firebase": "^10.1.0"
+    "firebase": "^10.11.0"
   }
 }
