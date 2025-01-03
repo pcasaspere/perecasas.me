@@ -14,10 +14,10 @@ const menus = computed(() => [
     text: "Proyectos",
     to: { name: "projects" },
   },
-  {
-    text: "Agendar reunión",
-    to: { name: "meeting" },
-  },
+  // {
+  //   text: "Agendar reunión",
+  //   to: { name: "meeting" },
+  // },
 ]);
 </script>
 <template>

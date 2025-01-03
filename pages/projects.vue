@@ -4,9 +4,21 @@ const utm_url =
   "?utm_source=website&utm_medium=web&utm_campaign=w_perecasasme&utm_id=w_perecasasme";
 const projects = computed(() => [
   {
+    name: "Atendata",
+    url: "https://atendata.net" + utm_url,
+    desc: "Empresa especializada en seguridad informática que se enfoca en proteger la infraestructura digital de las empresas. Ofrecer servicios para fortalecer la seguridad de las infraestructuras digitales",
+    year: "2023 - actualidad",
+  },
+  {
+    name: "vigilant.cat",
+    url: "https://vigilant.cat" + utm_url,
+    desc: "En este proyecto, trabajé en estrecha colaboración con el Secretariat de Federacions i Agrupacions de Defensa Forestal de Catalunya para desarrollar una solución innovadora destinada a integrar y visualizar las cámaras de vigilancia de las Agrupaciones de Defensa Forestal (ADF) de Cataluña. Actualmente, se gestionan más de 100 cámaras distribuidas estratégicamente para monitorear vastas áreas forestales.",
+    year: "2016 - actualidad",
+  },
+  {
     name: "TrainerGPT",
     url: "https://mytrainergpt.com" + utm_url,
-    desc: "Diseña planes personalizados con IA (ChatGPT-3.5) que se adapten a objetivos y necesidades especificados por los usuarios. También pueden añadir registros de su peso.",
+    desc: "Diseña planes personalizados con IA (under the hood ChatGPT) que se adapten a objetivos y necesidades especificados por los usuarios. También pueden añadir registros de su peso.",
     year: "2023 - actualidad",
   },
   {
@@ -20,12 +32,6 @@ const projects = computed(() => [
     github: "https://github.com/pcasaspere/rentobserver/",
     desc: "Proyecto de una tarde de domingo. Crawler para buscar alquileres y mandar el resultado por Telegram",
     year: 2020,
-  },
-  {
-    name: "vigilant.cat",
-    url: "https://vigilant.cat" + utm_url,
-    desc: "Diversas entidades tienen la posibilidad de integrar cámaras en la plataforma. Cualquier persona puede acceder a las instantáneas capturadas por estas cámaras. Además, las autoridades cuentan con la capacidad de monitorear en tiempo real la zona forestal, garantizando una pronta respuesta ante cualquier posible incendio o emergencia",
-    year: "2016 - actualidad",
   },
 ]);
 useSeoMeta({
