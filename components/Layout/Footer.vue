@@ -1,49 +1,75 @@
 <script setup></script>
 <template>
-  <footer>
-    <div class="mt-16 flex flex-col items-center">
-      <div class="mb-3 flex space-x-4">
-        <NuxtLink class="text-sm text-gray-500 transition hover:text-gray-600" :to="{ name: 'meeting' }"><span
-            class="sr-only">contact</span>
-          <IconsEmail class="h-6 w-6" />
-        </NuxtLink>
-        <NuxtLink class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer"
-          href="https://github.com/pcasaspere"><span class="sr-only">github</span>
-          <IconsGithub class="h-6 w-6" />
-        </NuxtLink>
-
-        <NuxtLink class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/pere-casas/"><span class="sr-only">linkedin</span>
-          <IconsLinkedin class="h-6 w-6" />
-        </NuxtLink>
-        <!--
-          <NuxtLink
-            class="text-sm text-gray-500 transition hover:text-gray-600"
-            target="_blank"
+  <footer class="bg-white dark:bg-gray-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="py-12">
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-6">
+          <NuxtLink 
+            :to="{ name: 'meeting' }" 
+            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200"
+          >
+            <span class="sr-only">Contacto</span>
+            <IconsEmail class="h-6 w-6" />
+          </NuxtLink>
+          
+          <NuxtLink 
+            target="_blank" 
             rel="noopener noreferrer"
-            href="https://twitter.com/CasasPerep"
-            ><span class="sr-only">twitter</span><IconsTwitter class="w-6 h-6"
-          /></NuxtLink> 
-        -->
-        <NuxtLink class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="me"
-          href="https://mastodont.cat/@pcasas"><span class="sr-only">mastodon</span>
-          <IconsMastodon class="h-6 w-6" />
-        </NuxtLink>
-      </div>
+            href="https://github.com/pcasaspere"
+            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200"
+          >
+            <span class="sr-only">GitHub</span>
+            <IconsGithub class="h-6 w-6" />
+          </NuxtLink>
 
-      <div class="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-        <NuxtLink :to="{ name: 'legal-aviso-legal' }">Aviso legal</NuxtLink>
-        <span>|</span>
-        <NuxtLink :to="{ name: 'legal-politica-privacidad' }">Política de privacidad</NuxtLink>
-        <span>|</span>
-        <NuxtLink :to="{ name: 'legal-politica-cookies' }">
-          Política de cookies
-        </NuxtLink>
-      </div>
-      <div class="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-        <div>Pere Casas</div>
-        <div>•</div>
-        <div>© {{ new Date().getFullYear() }}</div>
+          <NuxtLink 
+            target="_blank" 
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/pere-casas/"
+            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200"
+          >
+            <span class="sr-only">LinkedIn</span>
+            <IconsLinkedin class="h-6 w-6" />
+          </NuxtLink>
+
+          <NuxtLink 
+            target="_blank" 
+            rel="me"
+            href="https://mastodont.cat/@pcasas"
+            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200"
+          >
+            <span class="sr-only">Mastodon</span>
+            <IconsMastodon class="h-6 w-6" />
+          </NuxtLink>
+        </div>
+
+        <!-- Legal Links -->
+        <div class="mt-8 flex justify-center space-x-6 text-sm">
+          <NuxtLink 
+            :to="{ name: 'legal-aviso-legal' }"
+            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200"
+          >
+            Aviso legal
+          </NuxtLink>
+          <NuxtLink 
+            :to="{ name: 'legal-politica-privacidad' }"
+            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200"
+          >
+            Política de privacidad
+          </NuxtLink>
+          <NuxtLink 
+            :to="{ name: 'legal-politica-cookies' }"
+            class="text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors duration-200"
+          >
+            Política de cookies
+          </NuxtLink>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+          <p>© {{ new Date().getFullYear() }} Pere Casas. Todos los derechos reservados.</p>
+        </div>
       </div>
     </div>
   </footer>
