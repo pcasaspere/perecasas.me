@@ -29,49 +29,22 @@ const sections = [
   <div class="relative">
     <!-- Hero Section -->
     <div class="relative overflow-hidden bg-gradient-to-br from-primary/5 to-blue-600/5 dark:from-primary/10 dark:to-blue-600/10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <!-- Text Content -->
-          <div class="space-y-8">
-            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">
-              {{ title }}
-            </h1>
-            <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              Desde joven, he sido un entusiasta de la tecnología, siempre dispuesto a probar y experimentar con las últimas soluciones tecnológicas. Este afán de aprendizaje y mi insaciable curiosidad me han llevado a sumergirme en el desarrollo informático y la seguridad informática.
-            </p>
-            <div class="flex items-center space-x-4">
-              <NuxtLink
-                to="https://www.linkedin.com/in/pere-casas/"
-                class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-primary hover:bg-primary/90 transition-colors duration-200"
-              >
-                Conectemos en LinkedIn
-              </NuxtLink>
-            </div>
-          </div>
-          
-          <!-- Image -->
-          <div class="relative flex justify-center lg:justify-end">
-            <div class="relative group">
-              <div class="absolute -inset-0.5 bg-gradient-to-r from-primary/10 to-blue-600/10 rounded-full blur transition duration-1000 group-hover:blur-xl dark:from-primary/20 dark:to-blue-600/20"></div>
-              <div class="relative rounded-full overflow-hidden border-2 border-gray-200 dark:border-gray-700 transition duration-300 group-hover:border-primary/50">
-                <NuxtImg
-                  class="w-56 h-56 object-cover transition duration-300 group-hover:scale-105"
-                  src="/profile.jpeg"
-                  alt="Pere Casas Profile Photo"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white text-center">
+          {{ title }}
+        </h1>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto">
+          Una breve introducción sobre mí y mi trayectoria en el mundo de la tecnología.
+        </p>
       </div>
     </div>
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid md:grid-cols-2 gap-12">
+      <div class="grid md:grid-cols-2 gap-8">
         <div v-for="(section, index) in sections" :key="index" 
-          class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          class="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
             {{ section.title }}
           </h3>
           <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -87,6 +60,21 @@ const sections = [
             "Me apasiona el mundo tecnológico y su capacidad de transformar el mundo"
           </p>
         </blockquote>
+      </div>
+
+      <!-- Social Links -->
+      <div class="mt-16 flex justify-center space-x-6">
+        <NuxtLink 
+          to="https://www.linkedin.com/in/pere-casas/"
+          class="group relative inline-flex items-center px-6 py-3 rounded-lg overflow-hidden bg-gradient-to-r from-primary to-blue-600 text-white hover:from-primary/90 hover:to-blue-600/90 transition-all duration-300"
+          target="_blank"
+        >
+          <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-full group-hover:translate-x-0 bg-gradient-to-r from-white/10 to-white/20"></span>
+          <span class="relative flex items-center">
+            <IconsLinkedin class="w-5 h-5 mr-2" />
+            Conectemos en LinkedIn
+          </span>
+        </NuxtLink>
       </div>
     </div>
   </div>
